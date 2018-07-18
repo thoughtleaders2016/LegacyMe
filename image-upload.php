@@ -3,7 +3,7 @@
 *	ThoughtLeaders  Technologies LLP
 *	14/Jul/2018
 */
-require_once('access-control.php');
+require_once('./access-control.php');
 $target_path = "./res/images/";
 $file_name=uniqid().".jpg";
 $target_path=$target_path.$file_name;

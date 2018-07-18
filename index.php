@@ -3,8 +3,8 @@
 *	ThoughtLeaders  Technologies LLP
 *	14/Jul/2018
 */
-require_once('access-control.php');
-require_once('db-config.php');
+require_once('./access-control.php');
+require_once('./db-config.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$data = json_decode( file_get_contents('php://input'),true );
