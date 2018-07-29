@@ -10,15 +10,15 @@
 //page-3
 
 /**
-fetchJournalCategories()-> GET_ALL_JOURNAL_CATEGORIES_MASTERDATA
-method - GET
-rootURL/GET_ALL_JOURNAL_CATEGORIES_MASTERDATA
-function fetchAllJournalCategoriesMasterdata($conn){
-		$r=mysqli_query($conn,"select jcm_id,jcm_name,jcm_desc from journal_categories_masterdata;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}
+* fetchJournalCategories()-> GET_ALL_JOURNAL_CATEGORIES_MASTERDATA
+* method - GET
+* rootURL/GET_ALL_JOURNAL_CATEGORIES_MASTERDATA
+* function fetchAllJournalCategoriesMasterdata($conn){
+*		$r=mysqli_query($conn,"select jcm_id,jcm_name,jcm_desc from journal_categories_masterdata;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}
 */
 
 
