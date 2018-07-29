@@ -5,6 +5,7 @@
 */
 
 	require_once('./functions.php');
+	require_once('./business-functions.php');
 	$route=isset($_GET['route_type'])?$_GET['route_type']:'WRONG_URL';
 	
 	switch($route){
@@ -190,6 +191,21 @@
 		case 'DELETE_DREAM_USER_TRUSTEE_COMMENTS':
 			deleteDreamUserTrusteeComments($conn);
 		break;
+
+
+		case 'FETCH_LIST_JOURNAL_ENTRIES':
+			fetchListJournalEntries($conn);
+		break;
+
+		case 'FETCH_LIST_MEMORY_ENTRIES':
+			fetchListMemoryEntries($conn);
+		break;
+		
+		case 'FETCH_USER_COMPLETED_DREAMS':
+			fetchUserCompletedDreams($conn);
+		break;
+		
+
 		
 		default:
 			echo "Sorry Wrong Url";

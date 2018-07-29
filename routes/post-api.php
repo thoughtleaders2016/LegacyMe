@@ -4,6 +4,7 @@
 *	14/Jul/2018
 */
 	require_once('./functions.php');
+	require_once('./business-functions.php');
 	//$data global
 	
 	switch($route){
@@ -202,8 +203,8 @@
 		break;
 		case 'UPDATE_DREAM_USER_TRUSTEE_COMMENTS':
 			updateDreamUserTrusteeComments($conn,$data);
-		break;	
-		
+		break;
+
 		default:
 			echo "Sorry Wrong Url";
 		break;
