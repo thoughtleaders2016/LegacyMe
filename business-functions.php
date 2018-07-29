@@ -42,15 +42,15 @@ function fetchListMemoryEntries($conn){
 
 
 /**
-addJournalEntry()->REGISTER_JOURNAL_ENTRIES
-req->route_type->REGISTER_JOURNAL_ENTRIES
-method - POST
-function registerJournalEntries($conn,$data){
-		$r=mysqli_query($conn,"insert into journal_entries(u_id,jscm_id,j_id,je_text_type,je_img_type,je_vid_type,je_schedule_type,je_scheduled_date,je_smm_share,je_is_memory,je_created_at,je_updated_at) values(6,1,1,'url','url','url','I','2018-04-03','FB',0,now(),now());");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
+*addJournalEntry()->REGISTER_JOURNAL_ENTRIES
+*req->route_type->REGISTER_JOURNAL_ENTRIES
+*method - POST
+*function registerJournalEntries($conn,$data){
+*		$r=mysqli_query($conn,"insert into journal_entries(u_id,jscm_id,j_id,je_text_type,je_img_type,je_vid_type,je_schedule_type,je_scheduled_date,je_smm_share,je_is_memory,je_created_at,je_updated_at) values(6,1,1,'url','url','url','I','2018-04-03','FB',0,now(),now());");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
 */
 
 
@@ -64,36 +64,36 @@ function registerJournalEntries($conn,$data){
 // page-4
 
 /**
-addUserJournalEntry()->REGISTER_JOURNAL_USER_TRUSTEE_ASSOCIATION
-req->route_type->REGISTER_JOURNAL_USER_TRUSTEE_ASSOCIATION
-method - POST
-function registerJournalUserTrusteeAssociation($conn,$data){
-		$r=mysqli_query($conn,"insert into journal_user_trustee_association(je_id,u_id,utna_id,jmuta_updated_at) values(1,2,2,now());");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
+*addUserJournalEntry()->REGISTER_JOURNAL_USER_TRUSTEE_ASSOCIATION
+*req->route_type->REGISTER_JOURNAL_USER_TRUSTEE_ASSOCIATION
+*method - POST
+*function registerJournalUserTrusteeAssociation($conn,$data){
+*		$r=mysqli_query($conn,"insert into journal_user_trustee_association(je_id,u_id,utna_id,jmuta_updated_at) values(1,2,2,now());");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
 */
 
 
 
 /**
-editUserJournalEntry()->UPDATE_JOURNAL_USER_TRUSTEE_ASSOCIATION
-req->route_type->UPDATE_JOURNAL_USER_TRUSTEE_ASSOCIATION
-method - POST
-function updateJournalUserTrusteeAssociation($conn,$data){
-		$r=mysqli_query($conn,"update journal_user_trustee_association set je_id=1,u_id=2,utna_id=2,jmuta_updated_at=now() where jmuta_id=".$data['id'].";");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
+*editUserJournalEntry()->UPDATE_JOURNAL_USER_TRUSTEE_ASSOCIATION
+*req->route_type->UPDATE_JOURNAL_USER_TRUSTEE_ASSOCIATION
+*method - POST
+*function updateJournalUserTrusteeAssociation($conn,$data){
+*		$r=mysqli_query($conn,"update journal_user_trustee_association set je_id=1,u_id=2,utna_id=2,jmuta_updated_at=now() where jmuta_id=".$data['id'].";");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
 */
 
 
 
 /**
-scheduleJournalEntry() --Pending
-Job Scheduling / Triggers
+*scheduleJournalEntry() --Pending
+*Job Scheduling / Triggers
 */
 
 
@@ -105,9 +105,9 @@ Job Scheduling / Triggers
 //page-5
 
 /**
-fetchListJournalEntries()
-
-fetchListMemoryEntries()
+*fetchListJournalEntries()
+*
+*fetchListMemoryEntries()
 */
 
 
@@ -120,50 +120,49 @@ fetchListMemoryEntries()
 
 
 /**
-addUserDream()->REGISTER_DREAM_ENTRIES
-req->route_type->REGISTER_DREAM_ENTRIES
-method - POST
-function registerDreamEntries($conn,$data){
-		$r=mysqli_query($conn,"insert into dream_entries(u_id,dcm_id,d_title,d_target_date,d_desc,d_img_type,d_vid_type,d_is_completed,d_privacy_level,d_inspirations,d_likes,d_created_at,d_updated_at) values(2,1,'text','2018-09-09','text text text','url','url',0,0,2,10,now(),now());");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
+*addUserDream()->REGISTER_DREAM_ENTRIES
+*req->route_type->REGISTER_DREAM_ENTRIES
+*method - POST
+*function registerDreamEntries($conn,$data){
+*		$r=mysqli_query($conn,"insert into dream_entries(u_id,dcm_id,d_title,d_target_date,d_desc,d_img_type,d_vid_type,d_is_completed,d_privacy_level,d_inspirations,d_likes,d_created_at,d_updated_at) values(2,1,'text','2018-09-09','text text text','url','url',0,0,2,10,now(),now());");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
+*
+*
+*req->route_type->REGISTER_DREAM_USER_TRUSTEE_ASSOCIATION
 
-	
-req->route_type->REGISTER_DREAM_USER_TRUSTEE_ASSOCIATION
-
-function registerDreamUserTrusteeAssociation($conn,$data){
-		$r=mysqli_query($conn,"insert into dream_user_trustee_association(de_id,u_id,utna_id,duta_updated_at) values(1,2,2,now());");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
+*function registerDreamUserTrusteeAssociation($conn,$data){
+*		$r=mysqli_query($conn,"insert into dream_user_trustee_association(de_id,u_id,utna_id,duta_updated_at) values(1,2,2,now());");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
 */
 
 
 /**
-editUserDream()->UPDATE_DREAM_ENTRIES
-req->route_type->UPDATE_DREAM_ENTRIES
-method - POST
-function updateDreamEntries($conn,$data){
-		$r=mysqli_query($conn,"update dream_entries set u_id=2,dcm_id=1,d_title='text',d_target_date='2018-09-09',d_desc='text text text',d_img_type='url',d_vid_type='url',d_is_completed=1,d_privacy_level=1,d_inspirations=1,d_likes=1,d_updated_at=now() where de_id=".$data['id'].";");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
+*editUserDream()->UPDATE_DREAM_ENTRIES
+*req->route_type->UPDATE_DREAM_ENTRIES
+*method - POST
+*function updateDreamEntries($conn,$data){
+*		$r=mysqli_query($conn,"update dream_entries set u_id=2,dcm_id=1,d_title='text',d_target_date='2018-09-09',d_desc='text text text',d_img_type='url',d_vid_type='url',d_is_completed=1,d_privacy_level=1,d_inspirations=1,d_likes=1,d_updated_at=now() where de_id=".$data['id'].";");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
+*
+*
+*req->route_type->UPDATE_DREAM_USER_TRUSTEE_COMMENTS
 
-	
-req->route_type->UPDATE_DREAM_USER_TRUSTEE_COMMENTS
-
-function updateDreamUserTrusteeComments($conn,$data){
-		$r=mysqli_query($conn,"update dream_user_trustee_comments set de_id=1,u_id=2,utna_id=2,dutc_comments='text text text',dutc_updated_at=now() where dutc_id=".$data['id'].";");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
-
-Note - if Privacy is not personal
+*function updateDreamUserTrusteeComments($conn,$data){
+*		$r=mysqli_query($conn,"update dream_user_trustee_comments set de_id=1,u_id=2,utna_id=2,dutc_comments='text text text',dutc_updated_at=now() where dutc_id=".$data['id'].";");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
+*Note - if Privacy is not personal
 */
 
 
@@ -177,32 +176,31 @@ Note - if Privacy is not personal
 //Page-8
 
 /**
-fetchUserAllDreams()->GET_ALL_DREAM_ENTRIES
-rootURL/GET_ALL_DREAM_ENTRIES
-method - GET
-function fetchAllDreamEntries($conn){
-		$r=mysqli_query($conn,"select de_id,u_id,dcm_id,d_title,d_target_date,d_desc,d_img_type,d_vid_type,d_is_completed,d_privacy_level,d_inspirations,d_likes,d_created_at,d_updated_at from dream_entries;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}
-	
-rootURL/GET_ALL_DREAM_USER_TRUSTEE_ASSOCIATION
-function fetchAllDreamUserTrusteeAssociation($conn){
-		$r=mysqli_query($conn,"select duta_id,de_id,u_id,utna_id,duta_updated_at from dream_user_trustee_association;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}
-
-rootURl/GET_ALL_DREAM_USER_TRUSTEE_COMMENTS
-function fetchAllDreamUserTrusteeComments($conn){
-		$r=mysqli_query($conn,"select dutc_id,de_id,u_id,utna_id,dutc_comments,dutc_updated_at from dream_user_trustee_comments;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}	
-	
+*fetchUserAllDreams()->GET_ALL_DREAM_ENTRIES
+*rootURL/GET_ALL_DREAM_ENTRIES
+*method - GET
+*function fetchAllDreamEntries($conn){
+*		$r=mysqli_query($conn,"select de_id,u_id,dcm_id,d_title,d_target_date,d_desc,d_img_type,d_vid_type,d_is_completed,d_privacy_level,d_inspirations,d_likes,d_created_at,d_updated_at from dream_entries;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}
+*	
+*rootURL/GET_ALL_DREAM_USER_TRUSTEE_ASSOCIATION
+*function fetchAllDreamUserTrusteeAssociation($conn){
+*		$r=mysqli_query($conn,"select duta_id,de_id,u_id,utna_id,duta_updated_at from dream_user_trustee_association;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}
+*
+*rootURl/GET_ALL_DREAM_USER_TRUSTEE_COMMENTS
+*function fetchAllDreamUserTrusteeComments($conn){
+*		$r=mysqli_query($conn,"select dutc_id,de_id,u_id,utna_id,dutc_comments,dutc_updated_at from dream_user_trustee_comments;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}	
 */     
 
 
@@ -216,9 +214,9 @@ function fetchUserCompletedDreams($conn){
 
 
 /**
-computeUserDreamCompletionQuotient() -- Pending
-
-fetchUserYouTubeStream() -- Pending
+*computeUserDreamCompletionQuotient() -- Pending
+*
+*fetchUserYouTubeStream() -- Pending
 */
 
 
@@ -231,60 +229,60 @@ fetchUserYouTubeStream() -- Pending
 //Page-9
 
 /**
-fetchAllUsersDreamPool()->GET_ALL_DREAM_ENTRIES
-rootURL/GET_ALL_DREAM_ENTRIES
-method - GET
-function fetchAllDreamEntries($conn){
-		$r=mysqli_query($conn,"select de_id,u_id,dcm_id,d_title,d_target_date,d_desc,d_img_type,d_vid_type,d_is_completed,d_privacy_level,d_inspirations,d_likes,d_created_at,d_updated_at from dream_entries;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}
-	
-	
-rootURL/GET_ALL_DREAM_USER_TRUSTEE_ASSOCIATION
-function fetchAllDreamUserTrusteeAssociation($conn){
-		$r=mysqli_query($conn,"select duta_id,de_id,u_id,utna_id,duta_updated_at from dream_user_trustee_association;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}	
-
-	
-rootURL/GET_ALL_DREAM_USER_TRUSTEE_COMMENTS
-function fetchAllDreamUserTrusteeComments($conn){
-		$r=mysqli_query($conn,"select dutc_id,de_id,u_id,utna_id,dutc_comments,dutc_updated_at from dream_user_trustee_comments;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}	
-
-
-rootURL/GET_ALL_DREAM_USER_TRUSTEE_INSPIRED	
-function fetchAllDreamUserTrusteeInspired($conn){
-		$r=mysqli_query($conn,"select duti_id,de_id,u_id,utna_id,duti_updated_at from dream_user_trustee_inspired;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}
-	
-rootURl/GET_ALL_DREAM_USER_TRUSTEE_LIKES
-function fetchAllDreamUserTrusteeLikes($conn){
-		$r=mysqli_query($conn,"select dutl_id,de_id,u_id,utna_id,dutl_updated_at from dream_user_trustee_likes;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}
-	
+*fetchAllUsersDreamPool()->GET_ALL_DREAM_ENTRIES
+*rootURL/GET_ALL_DREAM_ENTRIES
+*method - GET
+*function fetchAllDreamEntries($conn){
+*		$r=mysqli_query($conn,"select de_id,u_id,dcm_id,d_title,d_target_date,d_desc,d_img_type,d_vid_type,d_is_completed,d_privacy_level,d_inspirations,d_likes,d_created_at,d_updated_at from dream_entries;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}
+*	
+*	
+*rootURL/GET_ALL_DREAM_USER_TRUSTEE_ASSOCIATION
+*function fetchAllDreamUserTrusteeAssociation($conn){
+*		$r=mysqli_query($conn,"select duta_id,de_id,u_id,utna_id,duta_updated_at from dream_user_trustee_association;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}	
+*
+*
+*rootURL/GET_ALL_DREAM_USER_TRUSTEE_COMMENTS
+*function fetchAllDreamUserTrusteeComments($conn){
+*		$r=mysqli_query($conn,"select dutc_id,de_id,u_id,utna_id,dutc_comments,dutc_updated_at from dream_user_trustee_comments;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}	
+*
+*
+*rootURL/GET_ALL_DREAM_USER_TRUSTEE_INSPIRED	
+*function fetchAllDreamUserTrusteeInspired($conn){
+*		$r=mysqli_query($conn,"select duti_id,de_id,u_id,utna_id,duti_updated_at from dream_user_trustee_inspired;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}
+*	
+*rootURl/GET_ALL_DREAM_USER_TRUSTEE_LIKES
+*function fetchAllDreamUserTrusteeLikes($conn){
+*		$r=mysqli_query($conn,"select dutl_id,de_id,u_id,utna_id,dutl_updated_at from dream_user_trustee_likes;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}
+*	
 */
 
 
 /**
-markDreamAsInspirational() -- Pending
+*markDreamAsInspirational() -- Pending
+*
+*markDreamAsLiked() -- Pending
 
-markDreamAsLiked() -- Pending
-
-makeDreamReplica() -- Pending
+*makeDreamReplica() -- Pending
 */
 
 
@@ -293,69 +291,69 @@ makeDreamReplica() -- Pending
 
 //page-11
 /**
-fetchListOfRealEstateProperties()->GET_ALL_WILL_EWILL_VERSION
-rootURL/GET_ALL_WILL_EWILL_VERSION
-method - GET
-function fetchAllWillEwillVersion($conn){
-		$r=mysqli_query($conn,"select wev_id,u_id,utna_id1,utna_id2,wev_version_no,wev_location_url,wev_description,wev_creation_completed_time,wev_creation_saved_time from will_ewill_version;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}
-	
-	
-rootURL/GET_ALL_WILL_REALESTATE
-	function fetchAllWillRealEstate($conn){
-		$r=mysqli_query($conn,"select wre_id,u_id,wscm_id,utna_id,wev_id,wre_name,wre_address,wre_property_share,wre_created_at, wre_updated_at from will_realestate;");
-		$resp=array();
-		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
-		echo json_encode($resp);
-	}
+*fetchListOfRealEstateProperties()->GET_ALL_WILL_EWILL_VERSION
+*rootURL/GET_ALL_WILL_EWILL_VERSION
+*method - GET
+*function fetchAllWillEwillVersion($conn){
+*		$r=mysqli_query($conn,"select wev_id,u_id,utna_id1,utna_id2,wev_version_no,wev_location_url,wev_description,wev_creation_completed_time,wev_creation_saved_time from will_ewill_version;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}
+*	
+*
+*rootURL/GET_ALL_WILL_REALESTATE
+*	function fetchAllWillRealEstate($conn){
+*		$r=mysqli_query($conn,"select wre_id,u_id,wscm_id,utna_id,wev_id,wre_name,wre_address,wre_property_share,wre_created_at, wre_updated_at from will_realestate;");
+*		$resp=array();
+*		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+*		echo json_encode($resp);
+*	}
 */
 
 
 /**
-addRealEstateProperty()->REGISTER_WILL_EWILL_VERSION
-req->routytype->REGISTER_WILL_EWILL_VERSION
-method - POST
-function registerWillEwillVersion($conn,$data){
-		$r=mysqli_query($conn,"insert into will_ewill_version(u_id,utna_id1,utna_id2,wev_version_no,wev_location_url,wev_description,wev_creation_completed_time,wev_creation_saved_time) values(2,2,2,00000,'text','text','2018-01-03','2018-01-03');");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
+*addRealEstateProperty()->REGISTER_WILL_EWILL_VERSION
+*req->routytype->REGISTER_WILL_EWILL_VERSION
+*method - POST
+*function registerWillEwillVersion($conn,$data){
+*		$r=mysqli_query($conn,"insert into will_ewill_version(u_id,utna_id1,utna_id2,wev_version_no,wev_location_url,wev_description,wev_creation_completed_time,wev_creation_saved_time) values(2,2,2,00000,'text','text','2018-01-03','2018-01-03');");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
 	
 	
 
-req->route_type->REGISTER_WILL_REALESTATE
-function registerWillRealEstate($conn,$data){
-		$r=mysqli_query($conn,"insert into will_realestate(u_id,wscm_id,utna_id,wev_id,wre_name,wre_address,wre_property_share,wre_created_at,wre_updated_at) values(2,1,2,1,'text','Kolkata','20%',now(),now());");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
+*req->route_type->REGISTER_WILL_REALESTATE
+*function registerWillRealEstate($conn,$data){
+*		$r=mysqli_query($conn,"insert into will_realestate(u_id,wscm_id,utna_id,wev_id,wre_name,wre_address,wre_property_share,wre_created_at,wre_updated_at) values(2,1,2,1,'text','Kolkata','20%',now(),now());");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
 */
 
 
 
 /**
-editRealEstateProperty()->UPDATE_WILL_EWILL_VERSION
-req->route_type->UPDATE_WILL_EWILL_VERSION
-method -POST
-function updateWillEwillVersion($conn,$data){
-		$r=mysqli_query($conn,"update will_ewill_version set u_id=2,utna_id1=2,utna_id2=2,wev_version_no=12345,wev_location_url='text',wev_description='text',wev_creation_completed_time='2018-01-03',wev_creation_saved_time='2018-01-03' where wev_id=".$data['id'].";");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}
-	
-	
-req->route_type->UPDATE_WILL_REALESTATE
-function updateWillRealEstate($conn,$data){
-		$r=mysqli_query($conn,"update will_realestate set u_id=2,wscm_id=1,utna_id=2,wev_id=1,wre_name='text1',wre_address='text1',wre_property_share='30%',wre_updated_at=now() where wre_id=".$data['id'].";");
-		$status=0;
-		if($r>0) $status=1;
-		echo json_encode(array("status"=>$status));
-	}	
-
+*editRealEstateProperty()->UPDATE_WILL_EWILL_VERSION
+*req->route_type->UPDATE_WILL_EWILL_VERSION
+*method -POST
+*function updateWillEwillVersion($conn,$data){
+*		$r=mysqli_query($conn,"update will_ewill_version set u_id=2,utna_id1=2,utna_id2=2,wev_version_no=12345,wev_location_url='text',wev_description='text',wev_creation_completed_time='2018-01-03',wev_creation_saved_time='2018-01-03' where wev_id=".$data['id'].";");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}
+*	
+*	
+*req->route_type->UPDATE_WILL_REALESTATE
+*function updateWillRealEstate($conn,$data){
+*		$r=mysqli_query($conn,"update will_realestate set u_id=2,wscm_id=1,utna_id=2,wev_id=1,wre_name='text1',wre_address='text1',wre_property_share='30%',wre_updated_at=now() where wre_id=".$data['id'].";");
+*		$status=0;
+*		if($r>0) $status=1;
+*		echo json_encode(array("status"=>$status));
+*	}	
+*
 */
