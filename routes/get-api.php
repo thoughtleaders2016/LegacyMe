@@ -205,7 +205,25 @@
 			fetchUserCompletedDreams($conn);
 		break;
 		
-
+		case 'FETCH_WILL_FINANCE_BY_TYPE':
+			fetchWillFinanceByType($conn);
+		break;
+		
+		case 'FETCH_WILL_LOAN_BY_TYPE':
+			fetchAllWillLoansByType($conn);
+		break;
+		
+		case 'GET_ALL_WILL_VEHICLES_BY_TYPE':
+			fetchAllWillVehiclesByType($conn);
+		break;
+		
+		case 'GET_ALL_WILL_CASH_CHARITY_BY_TYPE':
+			fetchAllWillCashCharityByType($conn);
+		break;
+		
+		case 'GET_ALL_WILL_INSURANCES_BY_ID':
+			fetchAllWillInsurancesByType($conn);
+		break;
 		
 		default:
 			echo "Sorry Wrong Url";
