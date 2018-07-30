@@ -904,6 +904,7 @@ function registerUserLifeStatusVerification($conn,$data){
 
 
 
+	
 /*DREAM_USER_TRUSTEE_COMMENTS*/
 
 	function registerDreamUserTrusteeComments($conn,$data){
