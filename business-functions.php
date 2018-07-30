@@ -357,3 +357,181 @@ function fetchUserCompletedDreams($conn){
 *	}	
 *
 */
+
+
+
+//page-12
+/**
+
+fetchListOfFinancialInstruments()->GET_ALL_WILL_EWILL_VERSION
+rootURL/GET_ALL_WILL_EWILL_VERSION
+method - GET
+function fetchAllWillEwillVersion($conn){
+		$r=mysqli_query($conn,"select wev_id,u_id,utna_id1,utna_id2,wev_version_no,wev_location_url,wev_description,wev_creation_completed_time,wev_creation_saved_time from will_ewill_version;");
+		$resp=array();
+		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+		echo json_encode($resp);
+	}
+	
+rootURL/GET_ALL_WILL_FINANCE
+function fetchAllWillFinance($conn){
+		$r=mysqli_query($conn,"select wf_id,u_id,wscm_id,utna_id,wev_id,wf_name,wf_demat,wf_portfolio_no,wf_bank_name,wf_created_at,wf_updated_at from will_finance;");
+		$resp=array();
+		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+		echo json_encode($resp);
+	}
+*/
+
+function fetchWillFinanceByType($conn){
+	$r=mysqli_query($conn,"select wf_id,u_id,wscm_id,utna_id,wev_id,wf_name,wf_demat,wf_portfolio_no,wf_bank_name,wf_created_at,wf_updated_at from will_finance where wscm_id=".$_GET['id'].";");
+		$resp=array();
+		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+		echo json_encode($resp);
+}
+
+
+
+/**
+addFinancialInstrument()->REGISTER_WILL_EWILL_VERSION
+rootURL->route_type->REGISTER_WILL_EWILL_VERSION
+function registerWillEwillVersion($conn,$data){
+		$r=mysqli_query($conn,"insert into will_ewill_version(u_id,utna_id1,utna_id2,wev_version_no,wev_location_url,wev_description,wev_creation_completed_time,wev_creation_saved_time) values(2,2,2,00000,'text','text','2018-01-03','2018-01-03');");
+		$status=0;
+		if($r>0) $status=1;
+		echo json_encode(array("status"=>$status));
+	}
+
+rootURL->route_type->REGISTER_WILL_FINANCE
+function registerWillFinance($conn,$data){
+		$r=mysqli_query($conn,"insert into will_finance (u_id,wscm_id,utna_id,wev_id,wf_name,wf_demat,wf_portfolio_no,wf_bank_name,wf_created_at,wf_updated_at) values(2,1,2,1,'text','text','text','text',now(),now());");
+		$status=0;
+		if($r>0) $status=1;
+		echo json_encode(array("status"=>$status));
+	}
+*/
+
+
+/**
+editFinancialInstrument()->UPDATE_WILL_EWILL_VERSION
+function updateWillEwillVersion($conn,$data){
+		$r=mysqli_query($conn,"update will_ewill_version set u_id=2,utna_id1=2,utna_id2=2,wev_version_no=12345,wev_location_url='text',wev_description='text',wev_creation_completed_time='2018-01-03',wev_creation_saved_time='2018-01-03' where wev_id=".$data['id'].";");
+		$status=0;
+		if($r>0) $status=1;
+		echo json_encode(array("status"=>$status));
+	}
+
+/UPDATE_WILL_FINANCE
+function updateWillFinance($conn,$data){
+		$r=mysqli_query($conn,"update will_finance set u_id=2,wscm_id=1,utna_id=2,wev_id=1,wf_name='text1',wf_demat='text2',wf_portfolio_no='text3',wf_bank_name='text4',wf_updated_at=now() where wf_id=".$data['id'].";");
+		$status=0;
+		if($r>0) $status=1;
+		echo json_encode(array("status"=>$status));
+	}
+*/
+
+
+
+//page-13
+/*
+*fetchListOfBankSafeAccounts()
+*	rootURL->route_type->GET_ALL_WILL_EWILL_VERSION
+*addBankSafeAccount()
+*	rootURL->route_type->REGISTER_WILL_FINANCE
+*editBankSafeAccount()
+*	rootURL->route_type->UPDATE_WILL_FINANCE
+
+
+
+//page-14
+/**
+*fetchListOfLoanAccounts()->FETCH_WILL_LOAN_BY_TYPE
+*/
+function fetchAllWillLoansByType($conn){
+		$r=mysqli_query($conn,"select wl_id,u_id,wscm_id,utna_id,wev_id,wl_loan_no,wl_bank_name,wl_total_amt,wl_outstanding_amt,wl_created_at,wl_updated_at from will_loans where wscm_id=".$_GET['id'].";");
+		$resp=array();
+		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+		echo json_encode($resp);
+	}
+
+
+/**
+*addLoanAccount()->REGISTER_WILL_LOANS / REGISTER_WILL_EWILL_VERSION
+*editLoanAccount() -> UPDATE_WILL_LOANS / UPDATE_WILL_EWILL_VERSION
+*/
+
+
+//page-15
+/**
+*fetchListOfVehicles() -> GET_ALL_WILL_VEHICLES_BY_TYPE
+*/
+function fetchAllWillVehiclesByType($conn){
+		$r=mysqli_query($conn,"select wv_id,u_id,wscm_id,utna_id,wev_id,wv_vrn,wv_vt,wv_created_at,wv_updated_at from will_vehicles where wscm_id=".$_GET['id'].";");
+		$resp=array();
+		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+		echo json_encode($resp);
+	}
+
+/**
+*addVehicle() -> REGISTER_WILL_VEHICLES
+*editVehicle() -> UPDATE_WILL_VEHICLES
+*/
+
+
+
+
+//page-16
+/**
+*fetchListOfCashCharityOptions() -> GET_ALL_WILL_CASH_CHARITY_BY_TYPE
+*/
+function fetchAllWillCashCharityByType($conn){
+		$r=mysqli_query($conn,"select wcc_id,u_id,wscm_id,utna_id,wcc_creditor_debtor_name,wcc_amount,wcc_charitable_inst,wcc_purpose,wcc_created_at,wcc_updated_at from will_cash_charity where wscm_id=".$_GET['id'].";");
+		$resp=array();
+		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+		echo json_encode($resp);
+	}
+
+
+/**
+*addCashCharityOption() -> REGISTER_WILL_EWILL_VERSION / REGISTER_WILL_CASH_CHARITY
+*editCashCharityOption() -> UPDATE_WILL_EWILL_VERSION / UPDATE_WILL_CASH_CHARITY
+*/
+
+
+
+
+
+
+
+//page-17
+/**
+*fetchListOfInsuranceSchemes() -> GET_ALL_WILL_INSURANCES_BY_ID
+*/
+
+function fetchAllWillInsurancesByType($conn){
+		$r=mysqli_query($conn,"select wi_id,u_id,wscm_id,utna_id,wev_id,wi_in,wi_it,wi_ci,wi_created_at,wi_updated_at from will_insurances where wscm_id=".$_GET['id'].";");
+		$resp=array();
+		while($row=mysqli_fetch_assoc($r))$resp[]=$row;
+		echo json_encode($resp);
+	}
+	
+/**
+*addInsuranceScheme() -> REGISTER_WILL_EWILL_VERSION / REGISTER_WILL_INSURANCE
+*editInsuranceScheme() -> UPDATE_WILL_EWILL_VERSION / UPDATE_WILL_INSURANCE
+*/
+
+
+
+//page-19
+//Pending
+
+//page-20 -> PENDING
+/**
+*addUserProfile() -> REGISTER_USER
+*editUserProfile() -> UPDATE_USER
+*addUserLifeStatusVerification() -> pending
+*edituserLifeStatusVerification() -> pending
+*/
+
+
+//page-21
+//Pending
